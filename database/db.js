@@ -3,14 +3,9 @@ require('dotenv').config();
 
 const db = {};
 
-const dbinfo = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-    host: process.env.DB_HOST,
-    dialect: process.env.DB_DIALECT,
-    port: process.env.DB_PORT,
-    pool: {
-        max: 5,
-        min: 0,
-    },
+const dbinfo = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres',
+    // Autres options de configuration au besoin
 });
 
 
@@ -48,6 +43,6 @@ db.dbinfo = dbinfo;
 
 db.Sequelize = Sequelize;
 
-// dbinfo.sync({ force: true });
+ //dbinfo.sync({ force: true });
 
 module.exports = db;

@@ -40,7 +40,7 @@ module.exports = (dbinfo, Sequelize) => {
             allowNull: true,
         },
         Status: {
-            type: Sequelize.DataTypes.TINYINT(1),
+            type: Sequelize.DataTypes.BOOLEAN,
             allowNull: true,
         },
         /*inserer une image (avatar) va covertir en binaire*/
